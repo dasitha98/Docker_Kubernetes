@@ -1,0 +1,20 @@
+
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: node-sliit
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-sliit
+  template:
+    metadata:
+      labels:
+        app: node-sliit
+    spec:
+      containers:
+        - name: node
+          image: 20220516/node-sliit
+          ports:
+          - containerPort: 8000
